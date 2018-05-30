@@ -18,8 +18,10 @@
 				include "regFinish.php";
 			elseif(isset($_POST["kundenNr"])) //für die Anmeldung
 				include "login.php";
-			if(isset($_POST["item"])) //Funktion Kaufen-Buttons
+			elseif(isset($_POST["item"])) //Funktion Kaufen-Buttons
 				include "addItem.php";
+			elseif(isset($_POST["kundenNrOut"]))
+				include "logout.php";
 		
 			//Anmeldung, alternativ include header ab hier
 			if(!isset($_SESSION["kundenNr"])) //wenn User nicht angemeldet ist erfolgt Anmeldung als Gast
@@ -46,8 +48,8 @@
 			echo "<a class='mobileDelete' href='Index.php'> <button type='submit'>Suchen</button></a>";
 			echo "</form>";
 				if($_SESSION["kundenNr"] !== 0){					
-					echo "<form name='logoutIndex' class='noMargin' action='logout.php' method='post'>";
-					echo "<label class='cusNr mobileDelete'>Kundennummer: <input name='kundenNr' class='mobileDelete' type='text' name='Kundennummer' value='' size='7' maxlength='7'></label>";
+					echo "<form name='logoutIndex' class='noMargin' action='Index.php' method='post'>";
+					echo "<label class='cusNr mobileDelete'>Kundennummer: <input name='kundenNrOut' class='mobileDelete' type='text' name='Kundennummer' value='' size='7' maxlength='7'></label>";
 						echo "<a class='butSignIn' href='logout.php'> <button type='submit'>Abmelden</button> </a>";
 					echo "</form>";
 				}

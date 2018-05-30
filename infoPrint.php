@@ -17,4 +17,7 @@
 			}
 		}
 	}	
+	//Ausgabe für die Abmeldung auf Index.php
+	elseif(isset($_POST["kundenNrOut"]))
+		echo "Sie haben sich erfolgreich abgemeldet.<br>Wir freuen uns auf Ihren nächsten Besuch.";
 ?>
