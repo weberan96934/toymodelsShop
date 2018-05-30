@@ -1,0 +1,378 @@
+
+/* Version für Handy-Bildschirme */
+@media screen and (max-width: 414px){
+	
+	body{
+		height: 100vh;
+		width: 95vw;
+		background-size: 300%;
+		margin-right: 0px;
+	}
+	
+	header{
+		align: center;
+		width: 95vw;
+	}
+	
+	.tabHeader{ /*Modifikationen für Kopfzeile*/
+		display: grid;
+		max-width: 95vw;
+		grid-template-columns: max-content max-content max-content max-content max-content;
+		margin-left: 5px;
+	}
+	
+	.logo{
+		width: 12vw;
+		margin-left: 9vw;
+	}
+	
+	.filter{
+		width: 25vw;
+		grid-row: 1 / 2;
+		grid-column: 2 / 3;
+	}
+	
+	.labFilter{
+		font-size: 3vw;
+		color: white;
+	}
+	
+	.iconCart{
+		display: block;
+		width: 11vw;
+	}
+	
+	.iconLogIn{
+		display: block;
+		width: 11vw;
+		grid-row: 1 / 2;
+		grid-column: 4 / 5;
+	}
+	
+	.search{
+		height: 3vh;
+		width: 50vw;
+		margin-left: 16vw;
+		grid-row: 2 / 4;
+		grid-column: 1 / 4;
+	}
+	
+	.iconSearch{
+		display: block;
+		width: 7vw;
+		grid-row: 2 / 3;
+		grid-column: 4 / 5;
+	}
+	
+	h1{
+		color: white;
+		text-align: center;
+	}	
+	
+	option{
+		font-size: 10px;
+	}
+	
+	p{
+		font-size: 4vw;
+	}
+	
+	button p{
+		font-size: 3vw;
+	}
+	
+	footer{
+		margin-top: 5vw;
+		height: 10vw;
+	}
+	
+	.tabItems{ /*Tabelle für Index.html*/
+		display: grid;
+		max-width: 90vw;
+		margin-left: 4vw;
+		margin-right: 4vw;
+		grid-template-columns: 4fr 1fr;
+		grid-template-rows: auto auto auto auto
+	}
+	
+	.tabItems p{
+		text-align: center;
+	}
+	
+	.tabItems button{
+		height: 4vh;
+		width: 13vw;
+		margin: 0px;
+		padding: 0px;
+		margin-top: 1vw;
+	}
+	
+	.tabRowType1{ /*Design für ungerade Zeilen */
+		background-color: #e6e6e6; /*Pick a color: https://www.w3schools.com/colors/colors_picker.asp */
+		padding: 0.2em;
+		margin-top: 0.1em;
+		margin-bottom: 0px;
+		
+	}
+
+	.tabRowType2{ /*Design für gerade Zeilen */
+		background-color: white;
+		padding: 0.2em;
+		margin-top: 0.1em;
+		margin-bottom: 0px;
+	}
+	
+	.price{
+		padding-top: 1vh;
+		padding-bottom: 1vh;
+		margin-bottom: 2vh;
+	}
+	
+	.mobileDelete{
+		display: none;
+	}
+		
+	.butSignIn{
+		display: none;
+	}
+	
+	.itemDescription1{
+		grid-row: 2 / 3;
+		grid-column: 1 / 3;
+	}
+
+	.itemDescription2{
+		grid-row: 5 / 6;
+		grid-column: 1 / 3;
+	}
+
+	.itemDescription3{
+		grid-row: 8 / 9;
+		grid-column: 1 / 3;
+	}
+
+	.itemDescription4{
+		grid-row: 11 / 12;
+		grid-column: 1 / 3;
+	}
+
+	.itemDescription5{
+		grid-row: 14 / 15;
+		grid-column: 1 / 3;
+	}
+
+	.tabHeadline{ /* ausblenden von Drucktitel */
+		display: none;
+	}
+	
+	.impressum{ /*Anzeige Impressum */
+	margin: 0px;
+	padding: 0px;
+	}
+
+	.impressum p {
+		font-size: 4vw;
+	}
+	
+	.tabCart{ /* Tabelle für Einkaufswagen */
+		grid-template-columns: max-content max-content max-content;
+		margin-left: 10vw;;
+		margin-right: 10vw;
+	}
+	
+	.tabCart p{
+		font-size: 5vw;
+		padding-top: 2vw;
+		padding-bottom: 2vw;
+		margin: 0px;
+		margin-bottom: 0vw;
+	}
+	
+	.tabCart .menge{
+		grid-column: 2 / 3;
+	}
+	
+	.tabCart .article{
+		grid-column: 1 / 2;
+	}
+	
+	.tabCart .priceSum{
+		grid-column: 3 / 4;
+		text-align: right;
+	}
+	
+	.tabCartSubtotalText{
+	grid-row: 3 / 4;
+	grid-column: 1 / 3;
+	text-align: right;
+	padding-right: 5vw;
+	border-top: solid 1vw black;
+}
+
+	.tabCartSubtotalPrice{
+		grid-row: 3 / 4;
+		grid-column: 3 / 4;
+		margin-top: auto;
+		margin-bottom: auto;
+		border-top: solid 1vw black;
+	}
+
+	.tabCartDiscountText{
+		grid-row: 4 / 5;
+		grid-column: 1 / 3;
+		text-align: right;
+		margin-top: auto;
+		margin-bottom: auto;
+		padding-right: 5vw;
+	}
+
+	.tabCartDiscountPrice{
+		grid-row: 4 / 5;
+		grid-column: 3 / 4;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	.tabCartNettoText{
+		grid-row: 5 / 6;
+		grid-column: 1 / 3;
+		text-align: right;
+		margin-top: auto;
+		margin-bottom: auto;
+		padding-right: 5vw;
+		border-top: solid 1vw black;
+	}
+
+	.tabCartNettoPrice{
+		grid-row: 5 / 6;
+		grid-column: 3 / 4;
+		margin-top: auto;
+		margin-bottom: auto;
+		border-top: solid 1vw black;
+	}
+
+	.tabCartMwstText{
+		grid-row: 6 / 7;
+		grid-column: 1 / 3;
+		text-align: right;
+		margin-top: auto;
+		margin-bottom: auto;
+		padding-right: 5vw;
+	}
+
+	.tabCartMwstPrice{
+		grid-row: 6 / 7;
+		grid-column: 3 / 4;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	.tabCartShipText{
+		grid-row: 7 / 8;
+		grid-column: 1 / 3;
+		text-align: right;
+		margin-top: auto;
+		margin-bottom: auto;
+		padding-right: 5vw;
+	}
+
+	.tabCartShipPrice{
+		grid-row: 7 / 8;
+		grid-column: 3 / 4;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	.tabCartBruttoText{
+		grid-row: 8 / 9;
+		grid-column: 1 / 3;
+		text-align: right;
+		font-weight: bold;
+		margin-top: auto;
+		margin-bottom: auto;
+		padding-right: 5vw;
+		border-top: solid 1vw black;
+		border-bottom: double 2vw black;
+	}
+
+	.tabCartBruttoPrice{
+		grid-row: 8 / 9;
+		grid-column: 3 / 4;
+		margin-top: auto;
+		margin-bottom: auto;
+		font-weight: bold;
+		border-top: solid 1vw black;
+		border-bottom: double 2vw black;
+	}
+	
+	.tabCartButton{
+	grid row: 9 / 10;
+	grid-column: 1 / 4;
+	font-size: 4vw;
+	height: 10vw;
+	text-align: center;
+}
+	
+	.tabCart .description{
+		display: none;
+	}
+	
+	.tabCart .artNr{
+		display: none;
+	}
+	
+	.tabCart .priceSingle{
+		display: none;
+	}
+	
+	.tabSignIn{ /*Tabelle für Anmeldung/Registrierung*/
+		font-size: 12px;
+		max-width: 80vw;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.tabSignIn p{
+		color: white;
+	}
+	
+	.tabSignIn button{
+		height: 4vh;
+		width: 18vw;
+		margin: 0px;
+		padding: 0px;
+		margin-top: 1vw;
+	}
+	
+	.tabSignInInput{
+		margin-left:auto;
+		height: 1.5em;
+		margin-left: 3vw;
+	}
+	
+	.impress h1{ /* Impressum */
+		color: white;
+		text-align: center;
+	}
+	
+	.impress p{
+		color: white;
+		text-align: center;
+	}
+	
+	.regist{ /* Registrierung */
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.regist p{
+		color: white;
+		text-align: right:
+		width: max-content;
+		size: 3vw;
+	}
+	
+	.regist .tabSignInInput{
+		width: 35vw;
+	}
+}

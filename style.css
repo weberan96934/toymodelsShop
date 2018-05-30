@@ -1,0 +1,306 @@
+﻿@media print{ /*Druckansicht*/
+	*{
+		font-family: "times new roman", times, serif;
+	}
+	
+	head{
+		display: none;
+	}
+	
+	header{
+		display: none;
+	}
+	
+	footer{
+		display: none;
+	}
+	
+	button{
+		display: none;
+	}
+	
+	.headline{
+		font-size: 22px;
+		font-weight: bold;
+	}
+
+	.tabCart{
+		display: grid;
+		grid-template-columns: max-content max-content max-content max-content
+		margin-top: 5em;
+	}
+	
+	.tabCart p{
+		width: 10vw;
+	}
+	
+	.tabCartButton{
+		display: none;
+	}
+}
+
+@media screen { /*Standart-Design*/
+	*{
+		font-family: helvetica, arial, sans-serif;
+	}
+	.headline{ /*Drucktitel ausblenden */
+		display: none;
+	}
+	.hide{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1024px) { /*Design für Tablets*/
+	*{
+		font-family: helvetica, arial, sans-serif;
+	}
+	.headline{ /*Drucktitel ausblenden */
+		display: none;
+	}
+	p{
+		font-size: 80%;
+	}
+	a{
+		font-size: 80%;
+	}
+	label{
+		font-size: 80%;
+	}
+}
+
+body{
+	background-image: url("background.jpg");
+	background-size: 120%;
+	border-radius: 10px;
+	width: 95vw;
+	height: 95vh;
+	}
+	
+	header{
+		text-align: left;
+		margin-top: 10px;
+		margin-bottom: 40px;
+		padding-bottom: 1vw;
+		color: white;
+	}
+	
+	.logo {
+		float: left;
+		margin-right: 20px;
+		margin-bottom: 0px;
+		width: 60px;
+	}
+	
+	.iconSearch{
+		display:none;
+	}
+	
+	.iconLogIn{
+		display: none;
+	}	
+
+	.iconCart{
+		display:none;
+	}	
+
+	p  {
+		font-size: 95%;
+		margin: 0px;
+		width: max-content;
+	}
+
+	a {
+		font-size: 95%;
+	}
+		
+	label {
+		font-size: 95%;
+	}
+	
+	footer {
+		margin-top: 6em;
+	}
+
+	footer a{
+		padding: 0.5vw;
+	}
+
+	.impress {
+			color: white;
+			text-align: center;
+	}
+	
+	.impressum{
+		color: white;
+		text-align: center;
+		opacity: 0.5;
+		margin-left: 4em;
+		padding-left: 1em;
+		padding-right: 1em;
+		padding-top: 0.1em;
+		font-size: 1vw;
+		width: 14vw;
+	}
+
+	.regist{
+		color: white;
+	}
+
+	.ghost-button-full-color {
+	  display: inline-block;
+	  color: #fff;
+	  background-color: transparent;
+	  border: 2px solid #fff;
+	  text-align: center;
+	  outline: none;
+	  text-decoration: none;
+	  transition: color 0.3s ease-out,
+				  background-color 0.3s ease-out,
+				  border-color 0.3s ease-out;
+	}
+	.ghost-button-full-color:hover,
+	.ghost-button-full-color:active {
+	  background-color: #9363c4;
+	  border-color: #9363c4;
+	  color: #fff;
+	  transition: color 0.3s ease-in,
+				  background-color 0.3s ease-in,
+				  border-color 0.3s ease-in;
+	}
+
+	.tabItems{
+		clear: left; /* beendet float ab diesem Element */
+		display: grid;
+		max-width: 100%;
+		grid-template-columns: minmax(10vw, 1fr) max-content 70vw max-content max-content;
+		grid-template-rows: 5% 5% 5% 5%;
+		margin-left: 2%;
+	}
+
+	.tabHeadline{ /* Design für Kopfzeile */
+		font-weight: bold;
+		padding: 0.5em;
+		margin: 0px;
+		color: white;
+	}
+
+	.tabRowType1{ /* Design für ungerade Zeilen */
+		background-color: #e6e6e6; /*Pick a color: https://www.w3schools.com/colors/colors_picker.asp */
+		padding: 0.5em;
+		margin-top: 0.1em;
+		margin-bottom: 0px;
+		
+	}
+
+	.tabRowType2{ /* Design für gerade Zeilen */
+		background-color: white;
+		padding: 0.5em;
+		margin-top: 0.1em;
+		margin-bottom: 0px;
+	}
+	
+	.price{
+		text-align: right;
+	}
+	
+	.butBuy {
+		margin: 0px;
+		margin-left: 1em;
+		width: 10em;
+		height: 30px;
+	}
+
+	.tabSignIn{ /* Tabelle für Anmeldung/Registrierung */
+		display: grid;
+		max-width: 30em;
+		grid-template-columns: max-content max-content;
+		grid-template-rows: max-content max-content;
+		margin-left: 1em;
+		color: white;
+	}
+
+	.tabSignInInput{
+		margin-left: 2em;
+		margin-bottom: 0.5em;
+		height: 2em;
+	}
+
+	.tabCart{ /*Tabelle für Warenkorb*/
+		display: grid;
+		max-width: 100%;
+		grid-template-columns: minmax(max-content, 1fr) minmax(max-content, 0.3fr) minmax(max-content, 3fr) minmax(max-content, 1fr) max-content max-content;
+		grid-template-rows: max-content max-content max-content max-content max-content max-content;
+		margin-left: 2%;
+	}
+
+	.tabCartSubtotalText{
+		grid-row: 4 / 5;
+		grid-column: 4 / 6;
+	}
+
+	.tabCartSubtotalPrice{
+		grid-row: 4 / 5;
+		grid-column: 6 / 7;
+	}
+
+	.tabCartDiscountText{
+		grid-row: 5 / 6;
+		grid-column: 4 / 6;
+	}
+
+	.tabCartDiscountPrice{
+		grid-row: 5 / 6;
+		grid-column: 6 / 7;
+	}
+
+	.tabCartNettoText{
+		grid-row: 6 / 7;
+		grid-column: 4 / 6;
+	}
+
+	.tabCartNettoPrice{
+		grid-row: 6 / 7;
+		grid-column: 6 / 7;
+	}
+
+	.tabCartMwstText{
+		grid-row: 7 / 8;
+		grid-column: 4 / 6;
+	}
+
+	.tabCartMwstPrice{
+		grid-row: 7 / 8;
+		grid-column: 6 / 7;
+	}
+
+	.tabCartShipText{
+		grid-row: 8 / 9;
+		grid-column: 4 / 6;
+	}
+
+	.tabCartShipPrice{
+		grid-row: 8 / 9;
+		grid-column: 6 / 7;
+	}
+
+	.tabCartBruttoText{
+		grid-row: 9 / 10;
+		grid-column: 4 / 6;
+	}
+
+	.tabCartBruttoPrice{
+		grid-row: 9 / 10;
+		grid-column: 6 / 7;
+	}
+
+	.tabCartButton{
+		grid row: 10 / 11;
+		grid-column: 4 / 7;
+		text-align: right;
+		margin-top: 0.5em;
+	}
+	
+	form{
+		display: inline;
+	}
