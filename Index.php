@@ -10,14 +10,21 @@
 		<link href="mobile.css" type="text/css" rel="stylesheet"/>
 		
 		<?php		
-			session_start();
-			include "connectDb.php";
-			include "addItem.php";
+			
 		?>
 	</head>
 	<body>
-		<!--Anmeldung, alternativ include header ab hier -->
+		
 		<?php
+			session_start();
+			include "connectDb.php";
+			
+			if(isset($_POST["Firma"]))
+				include "regFinish.php";
+			
+			include "addItem.php";
+		
+			//Anmeldung, alternativ include header ab hier
 			if(!isset($_SESSION["kundenNr"])) //wenn User nicht angemeldet ist erfolgt Anmeldung als Gast
 				$_SESSION["kundenNr"] = 0;
 			

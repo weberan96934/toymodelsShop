@@ -9,18 +9,7 @@
 		<link href="mobile.css" type="text/css" rel="stylesheet"/>
 		
 		<?php
-		$servername = "localhost";
-		$username = "root";
-		$dbname = "toymodelsdb";
-		
-		try{
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username);
-			// set the PDO error mode to exception
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		}
-		catch(PDOException $e){
-			echo "Connection failed" . $e->getMessage();
-		}
+			include "connectDb.php";
 		?>
 	</head>
 	<body>
@@ -28,7 +17,7 @@
 			<a href="Index.php"><img src="logo.png" alt="BeispielLogo" height="100"></img></a>
 			<h1>Konto erstellen</h1>
 		</header>
-			<form name="registration" action="regFinish.php" method="post">
+			<form name="registration" action="index.php" method="post">
 				<section class="tabSignIn regist"> <!-- Erstellung Benutzerkonto -->
 					<p>Firma: </p><input class="tabSignInInput" type="text" name="Firma" value="">
 					<p>Vorname: </p><input class="tabSignInInput" type="text" name="Vorname" value="">
