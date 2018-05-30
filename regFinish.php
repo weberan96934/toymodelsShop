@@ -13,8 +13,5 @@ $newKundenNr = $kundenNrMax[0][0] + 1;
 	
 $sqlRegUser = $pdo->prepare("INSERT INTO kunden VALUES ('$newKundenNr', '$firma', '$nachname', '$vorname', 'unbekannt', 'unbekannt', 'unbekannt', 'unbekannt', 'unbekannt', '1002', 'NULL')");
 $sqlRegUser->execute();
-
-echo "Sie haben sich erfolgreich registriert. Vielen Dank.<br>";
-echo "Ihre Kundennummer lautet: " . $newKundenNr . "<br>";
 ?>
 <a href="index.php"> <button type="submit">zur Hauptseite</button> </a>

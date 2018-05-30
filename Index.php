@@ -8,21 +8,18 @@
 		<title>Toy Models GmbH</title>
 		<link href="style.css" type="text/css" rel="stylesheet"/>
 		<link href="mobile.css" type="text/css" rel="stylesheet"/>
-		
-		<?php		
-			
-		?>
 	</head>
 	<body>
-		
 		<?php
 			session_start();
 			include "connectDb.php";
 			
-			if(isset($_POST["Firma"]))
+			if(isset($_POST["Firma"])) //für die Registrierung
 				include "regFinish.php";
-			
-			include "addItem.php";
+			elseif(isset($_POST["kundenNr"])) //für die Anmeldung
+				include "login.php";
+			if(isset($_POST["item"])) //Funktion Kaufen-Buttons
+				include "addItem.php";
 		
 			//Anmeldung, alternativ include header ab hier
 			if(!isset($_SESSION["kundenNr"])) //wenn User nicht angemeldet ist erfolgt Anmeldung als Gast
@@ -50,13 +47,13 @@
 			echo "</form>";
 				if($_SESSION["kundenNr"] !== 0){					
 					echo "<form name='logoutIndex' class='noMargin' action='logout.php' method='post'>";
-					echo "<label class='cusNr mobileDelete'>Kundennummer: <input class='mobileDelete' type='text' name='Kundennummer' value='' size='7' maxlength='7'></label>";
+					echo "<label class='cusNr mobileDelete'>Kundennummer: <input name='kundenNr' class='mobileDelete' type='text' name='Kundennummer' value='' size='7' maxlength='7'></label>";
 						echo "<a class='butSignIn' href='logout.php'> <button type='submit'>Abmelden</button> </a>";
 					echo "</form>";
 				}
 				elseif($_SESSION["kundenNr"] == 0){
-					echo "<form name='loginIndex' action='login.php' method='post'>";
-					echo "<label class='cusNr mobileDelete'>Kundennummer: <input class='mobileDelete' type='text' name='Kundennummer' value='' size='7' maxlength='7'></label>";
+					echo "<form name='loginIndex' action='Index.php' method='post'>";
+					echo "<label class='cusNr mobileDelete'>Kundennummer: <input class='mobileDelete' type='text' name='kundenNr' value='' size='7' maxlength='7'></label>";
 						echo "<a class='butSignIn' href='login.php'> <button type='submit'>Anmelden</button> </a>";
 					echo "</form>";
 				}
@@ -70,15 +67,14 @@
 		<a class="mobileDelete" href="Warenkorb.php"><button type="submit">zum Warenkorb</button></a> <!-- Button zum Warenkorb -->
 		<a class ="iconCart" href="Warenkorb.php"> <img class="iconCart" src="iconCart.jpg" alt="iconCart"></a>
 		</header>
-		<?php
 		
-		//provisorische Ausgabe für Kundennummer und Warenkorb-Array
-		if(isset($_SESSION["kundenNr"]))
-			echo "Ihre Kundennummer: " . $_SESSION["kundenNr"] . "<br>";
-		
+		<?php		
+		//provisorische Ausgabe für Warenkorb-Array
 		if(isset($_SESSION["cart"]))
 			echo "In Ihren Warenkorb: " . implode(" + ", $_SESSION["cart"]);
 		
+		//Ausgabe für User bei Anmeldung/Abmeldung/Registrierung
+		include "infoPrint.php";
 		?>
 		
 		<section class="tabItems">

@@ -9,18 +9,7 @@
 		<link href="mobile.css" type="text/css" rel="stylesheet"/>
 		
 		<?php
-		$servername = "localhost";
-		$username = "root";
-		$dbname = "toymodelsdb";
-		
-		try{
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username);
-			// set the PDO error mode to exception
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		}
-		catch(PDOException $e){
-			echo "Connection failed" . $e->getMessage();
-		}
+			include "connectDb";
 		?>
 	</head>
 	<body>
@@ -29,8 +18,8 @@
 			<h1>Anmeldung</h1> 
 		</header>
 		<section class="tabSignIn"> <!-- Anmeldung des Benutzers -->	
-			<form name="login" action="login.php" method="post">
-				<p>Kundennummer: </p><input class="tabSignInInput" type="text" name="Kundennummer" value="">
+			<form name="login" action="index.php" method="post">
+				<p>Kundennummer: </p><input name="kundenNr" class="tabSignInInput" type="text" name="kundenNr" value="">
 				<p>Passwort: </p><input class="tabSignInInput" type="password" name="Passwort" value="">		
 				<a href="Index.php"> <button class="tabSignInInput ghost-button-full-color" type="submit">Anmelden</button><br><br> </a>
 			</form>
