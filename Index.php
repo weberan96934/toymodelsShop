@@ -14,6 +14,13 @@
 			session_start();
 			include "connectDb.php";
 			
+			//Anmeldung, alternativ include header ab hier
+			if(!isset($_SESSION["kundenNr"])){ //wenn User nicht angemeldet ist erfolgt Anmeldung als Gast
+				$_SESSION["kundenNr"] = 0;
+			}
+			
+			include "lastRequest.php";
+			
 			if(isset($_POST["Firma"])) //für die Registrierung
 				include "regFinish.php";
 			elseif(isset($_POST["kundenNr"])) //für die Anmeldung
@@ -22,10 +29,6 @@
 				include "addItem.php";
 			elseif(isset($_POST["kundenNrOut"]))
 				include "logout.php";
-		
-			//Anmeldung, alternativ include header ab hier
-			if(!isset($_SESSION["kundenNr"])) //wenn User nicht angemeldet ist erfolgt Anmeldung als Gast
-				$_SESSION["kundenNr"] = 0;
 			
 			echo "<header class='tabHeader'> <!-- Kopfzeile des Dokuemnts -->";
 			echo "<a href='Index.php'><img class='logo' src='logo.png' alt='BeispielLogo'></img></a>";

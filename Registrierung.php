@@ -9,7 +9,8 @@
 		<link href="mobile.css" type="text/css" rel="stylesheet"/>
 		
 		<?php
-			include "connectDb.php";
+			session_start();
+			include "lastRequest.php";
 		?>
 	</head>
 	<body>

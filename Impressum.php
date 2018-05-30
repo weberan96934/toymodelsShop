@@ -7,23 +7,12 @@
 		<title>Impressum - Toy Models GmbH</title>
 		<link href="style.css" type="text/css" rel="stylesheet"/>
 		<link href="mobile.css" type="text/css" rel="stylesheet"/>
-		
-		<?php
-		$servername = "localhost";
-		$username = "root";
-		$dbname = "toymodelsdb";
-		
-		try{
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username);
-			// set the PDO error mode to exception
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		}
-		catch(PDOException $e){
-			echo "Connection failed" . $e->getMessage();
-		}
-		?>
 	</head>
 	<body>
+		<?php
+			session_start();
+			include "lastRequest.php";
+		?>
 		<header class="tabHeader"> <!-- Kopfzeile des Dokuemnts -->
 			<a href="Index.php"><img class="logo" src="logo.png" alt="BeispielLogo"></img></a>
 			<label class="filter"><p class="labFilter">Kategorie:</p><select class="filter"> <!-- Kategorie-Filter -->
