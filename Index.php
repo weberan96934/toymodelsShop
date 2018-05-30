@@ -33,17 +33,12 @@
 			echo "<header class='tabHeader'> <!-- Kopfzeile des Dokuemnts -->";
 			echo "<a href='Index.php'><img class='logo' src='logo.png' alt='BeispielLogo'></img></a>";
 			
-			$options = array('Alle Produkte', 'Vintage Cars', 'Ships', 'Trains', 'Planes', 'Motorcycles', 'Classic Cars', 'Trucks and Buses', 'Street Cars'); ?>
-			<label class="filter"><p class="labFilter">Kategorie:</p>
-			<select class="filter" name="filterOption"> <!-- Kategorie-Filter -->;
-			<?php foreach($options as $option): ?>
-				<option value = "<?php echo $option; ?>" <?php echo (isset($_POST['filterOption']) && $_POST['filterOption'] == $option) ? 'selected' : ''; ?>>
-					
-				</option>
-			<?php endforeach;
 			
+			echo "<form name='filter' action='index.php' method='post' style='inline'>";
+			echo "<label class='filter'><p class='labFilter'>Kategorie:</p><select class='filter' name='filterOption' href='Index.php'>";  #Kategorie-Filter
 			include "groupSelection.php";
 			echo "</select></label>";
+			echo "</form>";
 			
 			echo "<form name='search' action='index.php' method='post' style='inline'>";
 			echo "<input class='search' name='searchInput' type='text' value=''> <!-- Suchfeld -->";
@@ -88,7 +83,7 @@
 					include "searchSelection.php";
 				}
 				else if(isset($_POST['filterOption'])){
-					
+					include "searchSelection.php";
 				}
 				else{ include "artikelGen.php";}
 			?>

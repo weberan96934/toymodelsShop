@@ -15,11 +15,11 @@
 		$result = $getGroupNames->setFetchMode(PDO::FETCH_BOTH);
 		
 		$value = "Alle Produkte";
-		echo "<option>". $value. "</option>";
+		echo "<option value = \"" .$value. "\">" . $value. "</option>";
 		
 		foreach($getGroupNames->fetchAll() as $value) {
 			$groupKeyCounter = $groupKeyCounter + 1;
-			echo "<option>". $value[0]. "</option>";
+			echo "<option value = \"" .$value[0]. "\">" . $value[0]. "</option>";
 		}
 		
 		}
