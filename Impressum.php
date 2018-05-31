@@ -11,24 +11,10 @@
 	<body>
 		<?php
 			session_start();
+			include "connectDb.php";
 			include "lastRequest.php";
+			include "header.php";
 		?>
-		<header class="tabHeader"> <!-- Kopfzeile des Dokuemnts -->
-			<a href="Index.php"><img class="logo" src="logo.png" alt="BeispielLogo"></img></a>
-			<label class="filter"><p class="labFilter">Kategorie:</p><select class="filter"> <!-- Kategorie-Filter -->
-				<?php include "groupSelection.php" ?> <!-- Hier evtl. noch Funktion einfügen oder nur auf Hauptseite zurückleiten -->
-			</select></label>
-			<input class="search" type="text" value=""> <!-- Suchfeld -->
-			<a class ="iconSearch" href="Index.php"> <img class="iconSearch" src="iconSearch.jpg" alt="iconDelete">
-			<a class="mobileDelete" href="Index.php"> <button type="submit">Suchen</button> </a>
-			<label class="cusNr mobileDelete">Kundennummer: <input class="mobileDelete" type="text" name="Kundennummer" value="" size="7" maxlength="7"></label> <!--Anmeldung -->
-			<label class="mobileDelete">Passwort: <input class="mobileDelete" type="password" name="search" value="" size="20 maxlength="20"></label>
-			<a class="butSignIn" href="Index.php"> <button type="submit">Anmelden</button> </a>
-			<a class="butSignIn" href="Registrierung.php"> <button type="submit">Registrieren</button> </a>
-			<a class ="iconLogIn" href="Anmeldung.php"> <img class="iconLogIn" src="iconLogIn.jpg" alt="iconLogIn">			
-			<a class="mobileDelete" href="Warenkorb.php"><button type="submit">zum Warenkorb</button></a> <!-- Button zum Warenkorb -->
-			<a class ="iconCart" href="Warenkorb.php"> <img class="iconCart" src="iconCart.jpg" alt="iconCart"></a>
-		</header>
 		<section class="impress"> <!-- Präsentation der Firma -->
 			<h1 style="clear:left">Wir &uuml;ber uns</h1>
 			<p>Hier könnte ihr Impressum stehen</p>	 

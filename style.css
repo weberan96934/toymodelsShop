@@ -39,7 +39,7 @@
 	}
 }
 
-@media screen { /*Standart-Design*/
+@media screen { /*Standard-Design*/
 	*{
 		font-family: helvetica, arial, sans-serif;
 	}
@@ -109,6 +109,10 @@ body{
 		margin: 0px;
 		width: max-content;
 	}
+	
+	.whiteFont{
+		color: white;
+	}
 
 	a {
 		font-size: 95%;
@@ -173,7 +177,7 @@ body{
 		clear: left; /* beendet float ab diesem Element */
 		display: grid;
 		max-width: 100%;
-		grid-template-columns: minmax(10vw, 1fr) max-content 70vw max-content max-content;
+		grid-template-columns: minmax(10vw, 1fr) max-content minmax(10vw, 1fr) 60vw max-content max-content;
 		grid-template-rows: 5% 5% 5% 5%;
 		margin-left: 2%;
 	}
@@ -207,8 +211,12 @@ body{
 	.butBuy {
 		margin: 0px;
 		margin-left: 1em;
-		width: 10em;
+		width: 5em;
 		height: 30px;
+	}
+	
+	.count{
+		width: 3em;
 	}
 
 	.tabSignIn{ /* Tabelle für Anmeldung/Registrierung */

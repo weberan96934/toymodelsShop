@@ -13,25 +13,25 @@
 			include "lastRequest.php";
 		?>
 	</head>
-	<body>
+	<body>	
 		<header> <!-- Logo mit Ueberschrift -->
 			<a href="Index.php"><img src="logo.png" alt="BeispielLogo" height="100"></img></a>
 			<h1>Konto erstellen</h1>
 		</header>
-			<form name="registration" action="index.php" method="post">
+			<form name='registration' action='Index.php' method='post'>
 				<section class="tabSignIn regist"> <!-- Erstellung Benutzerkonto -->
-					<p>Firma: </p><input class="tabSignInInput" type="text" name="Firma" value="">
-					<p>Vorname: </p><input class="tabSignInInput" type="text" name="Vorname" value="">
-					<p>Nachname: </p><input class="tabSignInInput" type="text" name="Nachname" value="">
-					<p>Geburtsdatum: </p><input class="tabSignInInput" type="text" name="Geburtsdatum" value="">
-					<p>Mail: </p><input class="tabSignInInput" type="text" name="Mail" value="">
-					<p>Passwort: </p><input class="tabSignInInput" type="password" name="Passwort1" value="">
-					<p>Passwort wiederholen: </p><input class="tabSignInInput" type="password" name="Passwort2" value="">		
-					<a href="Index.php"> <button class="tabSignInInput ghost-button-full-color" type="submit">Schon fertig!</button> </a> <br> <br>
+					<p>Firma: </p><input class="tabSignInInput" type="text" name="Firma" value="" required="required">
+					<p>Nachname: </p><input class="tabSignInInput" type="text" name="Nachname" value="" required="required">
+					<p>Vorname: </p><input class="tabSignInInput" type="text" name="Vorname" value="" required="required">
+					<p>Telefon: </p><input class="tabSignInInput" type="text" name="Telefon" value="" required="required">
+					<p>Stra&szlig;e: </p><input class="tabSignInInput" type="text" name="Strasse" value="" required="required">
+					<p>Ort: </p><input class="tabSignInInput" type="text" name="Ort" value="" required="required">
+					<p>PLZ: </p><input class="tabSignInInput" type="text" name="PLZ" value="" required="required">
+					<p>Land: </p><input class="tabSignInInput" type="text" name="Land" value="" required="required">					
+					<button class="tabSignInInput ghost-button-full-color" type="submit">Schon fertig!</button> <br> <br>
 				</section>
 			</form>
 		<footer> <!-- weiterfuehrende Links -->
-			<a class="impressum" href="Anmeldung.php"><p>Sie haben bereits ein Konto? Hier geht es zur Anmeldung.</p></a>
 		</footer>
 	</body>
 </html>

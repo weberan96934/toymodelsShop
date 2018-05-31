@@ -16,22 +16,9 @@
 		?>
 	
 		<p class="headline">Toy Models GmbH</p>
-		<header class="tabHeader"> <!-- Kopfzeile des Dokuemnts -->
-			<a href="Index.php"><img class="logo" src="logo.png" alt="BeispielLogo"></img></a>
-			<label class="filter"><p class="labFilter">Kategorie:</p><select class="filter"> <!-- Kategorie-Filter -->
-				<?php include "groupSelection.php" ?>
-			</select></label>
-			<input class="search" type="text" value=""> <!-- Suchfeld -->
-			<a class ="iconSearch" href="Index.php"> <img class="iconSearch" src="iconSearch.jpg" alt="iconDelete">
-			<a class="mobileDelete" href="Index.php"> <button type="submit">Suchen</button> </a>
-			<label class="cusNr mobileDelete">Kundennummer: <input class="mobileDelete" type="text" name="Kundennummer" value="" size="7" maxlength="7"></label> <!--Anmeldung -->
-			<label class="mobileDelete">Passwort: <input class="mobileDelete" type="password" name="search" value="" size="20 maxlength="20"></label>
-			<a class="butSignIn" href="Index.php"> <button type="submit">Anmelden</button> </a>
-			<a class="butSignIn" href="Registrierung.php"> <button type="submit">Registrieren</button> </a>
-			<a class ="iconLogIn" href="Anmeldung.php"> <img class="iconLogIn" src="iconLogIn.jpg" alt="iconLogIn">			
-			<a class="mobileDelete" href="Warenkorb.php"><button type="submit">zum Warenkorb</button></a> <!-- Button zum Warenkorb -->
-			<a class ="iconCart" href="Warenkorb.php"> <img class="iconCart" src="iconCart.jpg" alt="iconCart"></a>
-		</header>
+		
+		<?php include "header.php"; ?>
+		
 		<section class="tabCart"> <!-- Anzeige im Warenkorb gelisteter Artikel -->
 			<p class="tabHeadline">Artikel</p> <p class="tabHeadline">Art.-Nr.</p> <p class="tabHeadline">Beschreibung</p> <p class="tabHeadline">Stückpreis</p> <p class="tabHeadline">Menge</p> <p class="tabHeadline">Preis</p> 
 			<p class="tabRowType1 article">Airbus A320</p> <p class="tabRowType1 artNr">1234</p> <p class="tabRowType1 description">Orginalgetreue Nachbildung im Maßstab 1:10.000</p> <p class="tabRowType1 priceSingle">219,00 &euro;</p> <p class="tabRowType1 menge">x 2</p> <p class="tabRowType1 priceSum">438,00 &euro;</p>

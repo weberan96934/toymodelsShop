@@ -3,12 +3,14 @@
 
 	include "connectDb.php";
 
-	$sqlKundenNr = $pdo->query("select KundenNr from kunden where KundenNr=$kundenNrUser");
+	$sqlKundenNr = $pdo->prepare("select KundenNr from kunden where KundenNr=$kundenNrUser");
+	$sqlKundenNr->execute();
 	$kundenNr = $sqlKundenNr->fetchAll(PDO::FETCH_BOTH);
 
 	if(isset($kundenNr[0][0])){
 		if($kundenNr[0][0] === $kundenNrUser){
-		$sqlNachname = $pdo->query("select Nachname from kunden where KundenNr=$kundenNrUser");
+		$sqlNachname = $pdo->prepare("select Nachname from kunden where KundenNr=$kundenNrUser");
+		$sqlNachname->execute();
 		$nachname = $sqlNachname->fetchAll(PDO::FETCH_BOTH);
 		
 		if(isset($_SESSION["cart"])) //für das Merken der Produkte im Warenkorb bei Login/Logout

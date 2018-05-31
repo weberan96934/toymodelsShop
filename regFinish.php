@@ -1,17 +1,19 @@
 <?php
-$firma = $_POST['Firma'];
-$vorname = $_POST['Vorname'];
-$nachname = $_POST['Nachname'];
-$geburtsdatum = $_POST['Geburtsdatum'];
-$mail = $_POST['Mail'];
-$passwort1 = $_POST['Passwort1'];
-$passwort2 = $_POST['Passwort2'];
+	$firma = $_POST['Firma'];
+	$nachname = $_POST['Nachname'];
+	$vorname = $_POST['Vorname'];
+	$telefon = $_POST['Telefon'];
+	$strasse = $_POST['Strasse'];
+	$ort = $_POST['Ort'];
+	$plz = $_POST['PLZ'];
+	$land = $_POST['Land'];
 
-$sqlKundenNr = $pdo->query("SELECT MAX(KundenNr) FROM kunden");
-$kundenNrMax = $sqlKundenNr->fetchAll(PDO::FETCH_BOTH);
-$newKundenNr = $kundenNrMax[0][0] + 1;
-	
-$sqlRegUser = $pdo->prepare("INSERT INTO kunden VALUES ('$newKundenNr', '$firma', '$nachname', '$vorname', 'unbekannt', 'unbekannt', 'unbekannt', 'unbekannt', 'unbekannt', '1002', 'NULL')");
-$sqlRegUser->execute();
+	//Nächste ID
+	$sqlKundenNr = $pdo->prepare("SELECT MAX(KundenNr)+1 FROM kunden");
+	$sqlKundenNr->execute();
+	$kundenNrMax = $sqlKundenNr->fetchAll(PDO::FETCH_BOTH);
+	$newKundenNr = $kundenNrMax[0][0];
+		
+	$sqlRegUser = $pdo->prepare("INSERT INTO kunden VALUES ('$newKundenNr', '$firma', '$nachname', '$vorname', '$telefon', '$strasse', '$ort', '$plz', '$land', '1002', 'NULL')");
+	$sqlRegUser->execute();
 ?>
-<a href="index.php"> <button type="submit">zur Hauptseite</button> </a>
