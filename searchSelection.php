@@ -1,34 +1,31 @@
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$dbname = "toymodelsdb";
 
-	try{
-		$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username);
-		// set the PDO error mode to exception
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	}
-	catch(PDOException $e){
-		echo "Connection failed" . $e->getMessage();
-	}
+	include "connectDb.php";
 	
-	
-	//Warengruppennamen als Array speichern, [0] ist alle
-	//if [0]:
 	$searchInput = $_POST['searchInput'];
-	$searchdb = $pdo->query("SELECT * FROM artikel WHERE ArtikelName LIKE '%$searchInput%'");
-	$searchResult = $searchdb->fetchAll(PDO::FETCH_BOTH);
+	$filterInput = $_POST['filterOption'];
 	
-	//else if nur nach Wg filtern
-	//$filterInput = $_POST['filterOption'];
-	//$getGroupNames = $pdo->query("SELECT ArtikelNr, ArtikelName, ar.GruppenNr, Massstab, Lieferant, ar.Beschreibung, Bestandsmenge, Einkaufspreis, Listenpreis 
-	//	FROM artikel as ar
-	//	JOIN warengruppen wg on wg.GruppenNr = ar.GruppenNr
-	//	WHERE Gruppenname = '$filterInput'");
-	//$searchResult = $getGroupNames->fetchAll(PDO::FETCH_BOTH); //Array mit Gruppennamen
-	
-	//else zusätzlich nach Warengruppe in db filtern
-	//...
+	//Suche und Filter aktiv
+	if($filterInput != "Alle Produkte" AND $searchInput != null){
+		$filterSearchdb = $pdo->query("SELECT ArtikelNr, ArtikelName, ar.GruppenNr, Massstab, Lieferant, ar.Beschreibung, Bestandsmenge, Einkaufspreis, Listenpreis 
+			FROM artikel as ar
+			JOIN warengruppen wg on wg.GruppenNr = ar.GruppenNr
+			WHERE Gruppenname = '$filterInput' and ArtikelName LIKE '%$searchInput%'");
+		$searchResult = $filterSearchdb->fetchAll(PDO::FETCH_BOTH);
+	}
+	//Filter aktiv ohne Suche
+	elseif($filterInput != "Alle Produkte"){
+		$groupResult = $pdo->query("SELECT ArtikelNr, ArtikelName, ar.GruppenNr, Massstab, Lieferant, ar.Beschreibung, Bestandsmenge, Einkaufspreis, Listenpreis 
+			FROM artikel as ar
+			JOIN warengruppen wg on wg.GruppenNr = ar.GruppenNr
+			WHERE Gruppenname = '$filterInput'");
+		$searchResult = $groupResult->fetchAll(PDO::FETCH_BOTH); //Array mit Gruppennamen
+	}
+	//Suche aktiv ohne Filter
+	elseif($searchInput != null){
+		$searchdb = $pdo->query("SELECT * FROM artikel WHERE ArtikelName LIKE '%$searchInput%'");
+		$searchResult = $searchdb->fetchAll(PDO::FETCH_BOTH);
+	}
 	
 	//Headline der Artikelansicht
 	echo "<p class='tabHeadline'>Artikel</p> <p class='tabHeadline'>Art.-Nr</p> <p class='tabHeadline'>Beschreibung</p> <p class='tabHeadline'>Preis</p> <p class='tabHeadline'></p>";
@@ -43,4 +40,7 @@
 		//Kaufen Button
 		echo "<p><a href='Index.php'> <button class='butBuy ghost-button-full-color' type='submit'><p>Kaufen</p></button> </a></p>";
 	}
+	
+	
+		
 ?>

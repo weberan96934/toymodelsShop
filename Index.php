@@ -11,6 +11,9 @@
 	</head>
 	<body>
 		<?php
+			if(isset($_POST ["searchInput"]))
+				$searchInput = $_POST ["searchInput"];
+		
 			session_start();
 			include "connectDb.php";
 			
@@ -33,15 +36,22 @@
 			echo "<header class='tabHeader'> <!-- Kopfzeile des Dokuemnts -->";
 			echo "<a href='Index.php'><img class='logo' src='logo.png' alt='BeispielLogo'></img></a>";
 			
-			
-			echo "<form name='filter' action='index.php' method='post' style='inline'>";
-			echo "<label class='filter'><p class='labFilter'>Kategorie:</p><select class='filter' name='filterOption' href='Index.php'>";  #Kategorie-Filter
+			#Gruppenfilter
+			echo "<form name='search' action='Index.php' method='post' style='inline'>";
+			echo "<label class='filter'><p class='labFilter'>Kategorie:</p>";
+			echo "<select name='filterOption' class='filter'>";
 			include "groupSelection.php";
+			$selected = $_POST["filterOption"];
+				if(isset($_POST["filterOption"])){
+					echo "<option name='$selected' value='$selected' selected>" . $selected . "</option>";
+				}
 			echo "</select></label>";
-			echo "</form>";
 			
-			echo "<form name='search' action='index.php' method='post' style='inline'>";
-			echo "<input class='search' name='searchInput' type='text' value=''> <!-- Suchfeld -->";
+			#Suche
+			if(isset($_POST["searchInput"]))
+				echo "<input class='search' name='searchInput' type='text' value='$searchInput'>";
+			else
+				echo "<input class='search' name='searchInput' type='text' value=''> <!-- Suchfeld -->";
 			echo "<a class ='iconSearch' href='Index.php'> <img class='iconSearch' src='iconSearch.jpg' alt='iconDelete'>";
 			echo "<a class='mobileDelete' href='Index.php'> <button type='submit'>Suchen</button></a>";
 			echo "</form>";
@@ -79,13 +89,14 @@
 		
 		<section class="tabItems">
 			<?php 
-				if(isset($_POST['searchInput'])){
+				//keine Filterung und keine Suche
+				if(!isset($_POST["filterOption"]))
+					include "artikelGen.php";
+				//Filter oder Suche oder Filter + Suche
+				elseif($_POST["filterOption"] == "Alle Produkte" AND $_POST["searchInput"] == null)
+					include "artikelGen.php";
+				else
 					include "searchSelection.php";
-				}
-				else if(isset($_POST['filterOption'])){
-					include "searchSelection.php";
-				}
-				else{ include "artikelGen.php";}
 			?>
 		</section>
 		<footer><!-- weiterführende Links -->
