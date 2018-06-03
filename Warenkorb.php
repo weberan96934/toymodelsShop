@@ -12,7 +12,7 @@
 		<?php
 			include "connectDb.php";
 			session_start();
-			
+
 			//Anmeldung
 			if(!isset($_SESSION["kundenNr"])){ //wenn User nicht angemeldet ist erfolgt Anmeldung als Gast
 				$_SESSION["kundenNr"] = 0;
