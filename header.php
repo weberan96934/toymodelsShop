@@ -4,7 +4,7 @@
 			echo "<a href='Index.php'><img class='logo' src='logo.png' alt='BeispielLogo'></img></a>";
 			
 			#Gruppenfilter
-			echo "<form name='search' action='Index.php' method='post' style='inline'>";
+			echo "<form class='groupForm' name='search' action='Index.php' method='post' style='inline'>";
 			echo "<label class='filter'><p class='labFilter'>Kategorie:</p>";
 			echo "<select name='filterOption' class='filter'>";
 			include "groupSelection.php";
@@ -23,8 +23,8 @@
 			echo "<a class='mobileDelete' href='Index.php'> <button type='submit'>Suchen</button></a>";
 			echo "</form>";
 			
-			//Kundennummer
-			if($_SESSION["kundenNr"] !== 0){					
+			#Kundennummer
+			if($_SESSION["kundenNr"] != 0){					
 				echo "<form name='logoutIndex' class='noMargin' action='Index.php' method='post'>";
 				echo "<label class='cusNr mobileDelete hide'>Kundennummer: <input name='kundenNrOut' class='mobileDelete' type='text' name='Kundennummer' value='' size='7' maxlength='7'></label>";
 					echo "<a class='butSignIn' href='logout.php'> <button type='submit'>Abmelden</button> </a>";
@@ -34,11 +34,11 @@
 				echo "<form name='loginIndex' action='Index.php' method='post'>";
 				echo "<label class='cusNr mobileDelete'>Kundennummer: <input class='mobileDelete' type='text' name='kundenNr' value='' size='7' maxlength='7'></label>";
 					echo "<a class='butSignIn' href='login.php'> <button type='submit'>Anmelden</button> </a>";
+					echo "<a class ='iconLogIn' href='Anmeldung.php'> <img class='iconLogIn' src='iconLogIn.jpg' alt='iconLogIn'>";	
 				echo "</form>";
 			}
-			
+		
 		echo "<a class='butSignIn' href='Registrierung.php'> <button type='submit'>Registrieren</button> </a>";
-		echo "<a class ='iconLogIn' href='Anmeldung.php'> <img class='iconLogIn' src='iconLogIn.jpg' alt='iconLogIn'>";			
 		echo "<a class='mobileDelete' href='Warenkorb.php'><button type='submit'>zum Warenkorb</button></a>";
 		echo "<a class ='iconCart' href='Warenkorb.php'> <img class='iconCart' src='iconCart.jpg' alt='iconCart'></a>";
 		echo "</header>";

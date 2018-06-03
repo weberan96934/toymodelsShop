@@ -34,13 +34,14 @@
 				include "addItem.php";
 			
 			include "header.php";
-		
-			//provisorische Ausgabe für Warenkorb-Array
-			if(isset($_SESSION["cart"]))
-				print_r($_SESSION["cart"]);
 			
 			//Ausgabe für User bei Anmeldung/Abmeldung/Registrierung
 			include "infoPrint.php";
+			
+			//Warenkorb zurücksetzen nach erfolgreicher Bestellung
+			if(isset($_POST["purchaseConfirmed"])){
+				unset($_SESSION["cart"]);
+			}
 		?>
 		
 		<section class="tabItems">

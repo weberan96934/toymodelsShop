@@ -40,10 +40,16 @@
 		echo '<p class="tabRowType1 tabCartShipText">Versandkosten:</p> <p class="tabRowType1 price tabCartShipPrice">5,00 &euro;</p>';
 		$sum = $sum + 5;
 		echo '<p class="tabRowType2 tabCartBruttoText">Brutto:</p> <p class="tabRowType2 price tabCartBruttoPrice">'.$sum. '&euro;</p>';
-		echo '<a class="tabCartButton" href="Index.php"> <button class="ghost-button-full-color tabCartButton" type="submit">Bestellung abschlie&szlig;en</button>';
+		
+		if($_SESSION['kundenNr'] != 0){
+			echo "<form class='tabCartButton' name='confirmPurchase' action='Index.php' method='post'>";
+			echo '<a class="tabCartButton" href="Index.php"> <button class="ghost-button-full-color tabCartButton" type="submit">Bestellung abschlie&szlig;en</button></a>';
+			echo "<input class='hide' name='purchaseConfirmed' type='text' value=''>";
+			echo "</form>";
+		}
 		
 	}
 	else
 	{
-		echo "Warenkorb leer";
+		echo "<p class='whiteFont'>Warenkorb leer</p>";
 	}

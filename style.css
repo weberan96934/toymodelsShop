@@ -243,68 +243,31 @@ body{
 	}
 
 	.tabCartSubtotalText{
-		grid-row: 4 / 5;
 		grid-column: 4 / 6;
 	}
 
 	.tabCartSubtotalPrice{
-		grid-row: 4 / 5;
-		grid-column: 6 / 7;
-	}
-
-	.tabCartDiscountText{
-		grid-row: 5 / 6;
-		grid-column: 4 / 6;
-	}
-
-	.tabCartDiscountPrice{
-		grid-row: 5 / 6;
-		grid-column: 6 / 7;
-	}
-
-	.tabCartNettoText{
-		grid-row: 6 / 7;
-		grid-column: 4 / 6;
-	}
-
-	.tabCartNettoPrice{
-		grid-row: 6 / 7;
-		grid-column: 6 / 7;
-	}
-
-	.tabCartMwstText{
-		grid-row: 7 / 8;
-		grid-column: 4 / 6;
-	}
-
-	.tabCartMwstPrice{
-		grid-row: 7 / 8;
 		grid-column: 6 / 7;
 	}
 
 	.tabCartShipText{
-		grid-row: 8 / 9;
 		grid-column: 4 / 6;
 	}
 
 	.tabCartShipPrice{
-		grid-row: 8 / 9;
 		grid-column: 6 / 7;
 	}
 
 	.tabCartBruttoText{
-		grid-row: 9 / 10;
 		grid-column: 4 / 6;
 	}
 
 	.tabCartBruttoPrice{
-		grid-row: 9 / 10;
 		grid-column: 6 / 7;
 	}
 
 	.tabCartButton{
-		grid row: 10 / 11;
-		grid-column: 4 / 7;
+		grid-column: 5 / 7;
 		text-align: right;
 		margin-top: 0.5em;
 	}
