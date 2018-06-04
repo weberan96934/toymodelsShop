@@ -7,4 +7,7 @@
 	else{
 		$_SESSION["cart"][] = array($_POST["item"], $_POST["menge"]);
 		}
+	for($i = 0; $i < count($_SESSION["cart"]); $i++){
+		setcookie("item" . $i, serialize($_SESSION["cart"][$i]), time() + (3600*24*365));
+	}
 ?>

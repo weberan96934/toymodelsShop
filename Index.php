@@ -15,12 +15,25 @@
 				$searchInput = $_POST ["searchInput"];
 			
 			session_start();
+			//Cookie für cart
+			if(!isset($_SESSION["kundenNr"])){
+				for($i = 0; $i >= 0; $i++){
+					if(isset($_COOKIE["item".$i])){
+						if(!isset($_SESSION["cart"])){
+							$_SESSION["cart"] = array(unserialize($_COOKIE["item".$i]));
+						}
+						else{
+							$_SESSION["cart"][] = unserialize($_COOKIE["item".$i]);
+						}
+						setcookie("item".$i , "", -100);
+					}	
+					else
+						$i = -100;						
+				}
+			}
 			
-			//Cookie für kundenNr
-			if(isset($_SESSION["kundenNr"])){
-				setcookie("kundenNr", $_SESSION["kundenNr"], time() + 13000000);
-			}				
-			elseif(isset($_COOKIE["kundenNr"])){
+			//Cookie für kundenNr				
+			if(isset($_COOKIE["kundenNr"])){
 				$_SESSION["kundenNr"] = $_COOKIE["kundenNr"];
 			}
 			
@@ -35,29 +48,24 @@
 				$_SESSION["kundenNr"] = 0;
 			}
 			
+			if(isset($_SESSION["kundenNr"])){
+				setcookie("kundenNr", $_SESSION["kundenNr"], time() + (3600*24*365));
+			}
+			
 			include "lastRequest.php";
 			
 			if(isset($_POST["Firma"])) //für die Registrierung
 				include "regFinish.php";
-			elseif(isset($_POST["item"])) //Funktion Kaufen-Buttons
-				include "addItem.php";
-				
-			//Cookie für cart
-			if(isset($_SESSION["cart"]))
-			{
-				for($i = 1; $i < count($_SESSION["cart"]) /2; $i++){
-					setcookie("item" . $i, serialize($_SESSION["cart"][$i]), time() + 13000000);
-				}
-				print_r($_COOKIE);
+			elseif(isset($_POST["item"])){ //Funktion Kaufen-Buttons
+				include "addItem.php";	
 			}
-			
 			include "header.php";
 			
 			//Ausgabe für User bei Anmeldung/Abmeldung/Registrierung
 			include "infoPrint.php";
 			
 			//Warenkorb zurücksetzen nach erfolgreicher Bestellung
-			if(isset($_POST["purchaseConfirmed"])){
+			if(isset($_POST["purchaseConfirmed"]) AND $_POST["purchaseConfirmed"]!=null){
 				unset($_SESSION["cart"]);
 			}
 		?>

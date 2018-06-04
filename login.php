@@ -1,11 +1,14 @@
 <?php
-	$kundenNrUser = $_POST['kundenNr'];
+	if($_POST['kundenNr']!=null){
+		$kundenNrUser = $_POST['kundenNr'];
+		include "connectDb.php";
 
-	include "connectDb.php";
+		$sqlKundenNr = $pdo->prepare("select KundenNr from kunden where KundenNr=$kundenNrUser");
+		$sqlKundenNr->execute();
+		$kundenNr = $sqlKundenNr->fetchAll(PDO::FETCH_BOTH);
+	}
 
-	$sqlKundenNr = $pdo->prepare("select KundenNr from kunden where KundenNr=$kundenNrUser");
-	$sqlKundenNr->execute();
-	$kundenNr = $sqlKundenNr->fetchAll(PDO::FETCH_BOTH);
+	
 
 	if(isset($kundenNr[0][0])){
 		if($kundenNr[0][0] === $kundenNrUser){
