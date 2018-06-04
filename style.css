@@ -177,7 +177,7 @@ body{
 		clear: left; /* beendet float ab diesem Element */
 		display: grid;
 		max-width: 100%;
-		grid-template-columns: minmax(10vw, 1fr) max-content minmax(10vw, 1fr) 60vw max-content max-content;
+		grid-template-columns: minmax(10vw, 1fr) max-content minmax(10vw, 1fr) minmax(20vw, 60vw) max-content max-content;
 		grid-template-rows: 5% 5% 5% 5%;
 		margin-left: 2%;
 	}
@@ -203,6 +203,10 @@ body{
 		margin-top: 0.1em;
 		margin-bottom: 0px;
 	}
+	
+	/*.description{
+		width: 50vw;
+	}*/
 	
 	.price{
 		text-align: right;

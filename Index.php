@@ -10,11 +10,20 @@
 		<link href="mobile.css" type="text/css" rel="stylesheet"/>
 	</head>
 	<body>
-		<?php
+		<?php		
 			if(isset($_POST ["searchInput"]))
 				$searchInput = $_POST ["searchInput"];
-		
+			
 			session_start();
+			
+			//Cookie für kundenNr
+			if(isset($_SESSION["kundenNr"])){
+				setcookie("kundenNr", $_SESSION["kundenNr"], time() + 13000000);
+			}				
+			elseif(isset($_COOKIE["kundenNr"])){
+				$_SESSION["kundenNr"] = $_COOKIE["kundenNr"];
+			}
+			
 			include "connectDb.php";
 			if(isset($_POST["kundenNrOut"]))
 				include "logout.php";
@@ -32,6 +41,15 @@
 				include "regFinish.php";
 			elseif(isset($_POST["item"])) //Funktion Kaufen-Buttons
 				include "addItem.php";
+				
+			//Cookie für cart
+			if(isset($_SESSION["cart"]))
+			{
+				for($i = 1; $i < count($_SESSION["cart"]) /2; $i++){
+					setcookie("item" . $i, serialize($_SESSION["cart"][$i]), time() + 13000000);
+				}
+				print_r($_COOKIE);
+			}
 			
 			include "header.php";
 			
