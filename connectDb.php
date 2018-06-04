@@ -9,7 +9,7 @@ try	{
 	}
 catch(PDOException $e)
 	{
-	echo "Connection failed: " . $e->getMassage();
+	echo "Connection failed: " . $e->getMessage();
 	die("Abbruch ...");
 	}
 ?>

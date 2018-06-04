@@ -24,7 +24,7 @@
 			echo '<p class="tabRowType'.$counter.' description">'. $articleInfo[1]. '</p>';
 			echo '<p class="tabRowType'.$counter.' priceSingle">' . $articleInfo[2]. '&euro;</p>';
 			echo '<p class="tabRowType'.$counter.' menge">' .$menge. '</p>';
-			echo '<p class="tabRowType'.$counter.' priceSum">'.$menge*$articleInfo[2]. '&euro;</p>';
+			echo '<p class="price tabRowType'.$counter.' priceSum">'.$menge*$articleInfo[2]. '&euro;</p>';
 			$sum = $sum + $menge*$articleInfo[2];
 			if($counter==1)
 			{
