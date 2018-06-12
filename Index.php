@@ -7,7 +7,9 @@
 		<meta name="author" content="André Weber, Julia Wette, Eva Wittmann">
 		<title>Toy Models GmbH</title>
 		<link href="style.css" type="text/css" rel="stylesheet"/>
-		<link href="mobile.css" type="text/css" rel="stylesheet"/>
+		<link href="mobile.css" type="text/css" rel="stylesheet"
+		
+
 	</head>
 	<body>
 		<?php		
@@ -59,8 +61,14 @@
 			elseif(isset($_POST["item"])){ //Funktion Kaufen-Buttons
 				include "addItem.php";	
 			}
-			include "header.php";
+			include "header.php";?>
 			
+			<template id='template1'>
+				<div id='div1'>
+					<p id='newItem'>testo</p>
+				</div>
+			</template>
+			<?php
 			//Ausgabe für User bei Anmeldung/Abmeldung/Registrierung
 			include "infoPrint.php";
 			
@@ -75,8 +83,12 @@
 				include "artikelGen.php";
 			?>
 		</section>
+		
 		<footer><!-- weiterführende Links -->
 			<a class="impressum" href="Impressum.php"><p>Wir &uuml;ber uns & Impressum</p></a>
+			<p >test</p>		
 		</footer>
+		<script type="text/javascript" src="index.js"></script>
+		
 	</body>
 </html>

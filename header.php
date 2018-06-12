@@ -41,7 +41,7 @@
 			}
 		
 		echo "<a class='butSignIn' href='Registrierung.php'> <button type='submit'>Registrieren</button> </a>";
-		echo "<a class='mobileDelete' href='Warenkorb.php'><button type='submit'>zum Warenkorb</button></a>";
+		echo "<a class='mobileDelete' href='Warenkorb.php' onmouseover='printCartView()' onmouseout='hideCartView()'><button type='submit'>zum Warenkorb</button></a>";
 		echo "<a class ='iconCart' href='Warenkorb.php'> <img class='iconCart' src='iconCart.jpg' alt='iconCart'></a>";
 		echo "</header>";		
 	?>	
