@@ -1,3 +1,5 @@
+// Dem André seine Funktionen:
+
 function printCartView() { 
 	var item = document.createElement('p');
 	item.value = "test";
@@ -19,3 +21,17 @@ function printCartView() {
 function hideCartView() { 
 	alert("Ich bin versteckt!");
 }
+
+
+// Eva´s und Julia´s Funktionen:
+
+function myFunction(){
+	alert("bla");
+}
+
+/*var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function()
+	{
+
+	}
+*/
