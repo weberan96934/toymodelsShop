@@ -34,7 +34,7 @@
 # same ServerRoot for multiple httpd daemons, you will need to change at
 # least PidFile.
 #
-ServerRoot "D:/Programme/XAMPP/apache"
+ServerRoot "C:/XAMPP2/apache"
 
 #
 # Mutex: Allows you to set the mutex mechanism and mutex file directory
@@ -93,7 +93,6 @@ LoadModule authz_host_module modules/mod_authz_host.so
 #LoadModule authz_owner_module modules/mod_authz_owner.so
 LoadModule authz_user_module modules/mod_authz_user.so
 LoadModule autoindex_module modules/mod_autoindex.so
-#LoadModule brotli_module modules/mod_brotli.so
 #LoadModule buffer_module modules/mod_buffer.so
 #LoadModule cache_module modules/mod_cache.so
 #LoadModule cache_disk_module modules/mod_cache_disk.so
@@ -134,7 +133,6 @@ LoadModule log_config_module modules/mod_log_config.so
 #LoadModule log_forensic_module modules/mod_log_forensic.so
 #LoadModule lua_module modules/mod_lua.so
 LoadModule cache_disk_module modules/mod_cache_disk.so
-#LoadModule md_module modules/mod_md.so
 #LoadModule macro_module modules/mod_macro.so
 LoadModule mime_module modules/mod_mime.so
 #LoadModule mime_magic_module modules/mod_mime_magic.so
@@ -146,12 +144,10 @@ LoadModule proxy_ajp_module modules/mod_proxy_ajp.so
 #LoadModule proxy_express_module modules/mod_proxy_express.so
 #LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so
 #LoadModule proxy_ftp_module modules/mod_proxy_ftp.so
-#LoadModule proxy_hcheck_module modules/mod_proxy_hcheck.so
 #LoadModule proxy_html_module modules/mod_proxy_html.so
 #LoadModule proxy_http_module modules/mod_proxy_http.so
 #LoadModule proxy_http2_module modules/mod_proxy_http2.so
 #LoadModule proxy_scgi_module modules/mod_proxy_scgi.so
-#LoadModule proxy_uwsgi_module modules/mod_proxy_uwsgi.so
 #LoadModule proxy_wstunnel_module modules/mod_proxy_wstunnel.so
 #LoadModule ratelimit_module modules/mod_ratelimit.so
 #LoadModule reflector_module modules/mod_reflector.so
@@ -246,8 +242,8 @@ ServerName localhost:80
 # documents. By default, all requests are taken from this directory, but
 # symbolic links and aliases may be used to point to other locations.
 #
-DocumentRoot "D:/Programme/XAMPP/htdocs"
-<Directory "D:/Programme/XAMPP/htdocs">
+DocumentRoot "C:/XAMPP2/htdocs"
+<Directory "C:/XAMPP2/htdocs">
     #
     # Possible values for the Options directive are "None", "All",
     # or any combination of:
@@ -365,7 +361,7 @@ LogLevel warn
     # client.  The same rules about trailing "/" apply to ScriptAlias
     # directives as to Alias.
     #
-    ScriptAlias /cgi-bin/ "D:/Programme/XAMPP/cgi-bin/"
+    ScriptAlias /cgi-bin/ "C:/XAMPP2/cgi-bin/"
 
 </IfModule>
 
@@ -378,23 +374,14 @@ LogLevel warn
 </IfModule>
 
 #
-# "D:/Programme/XAMPP/cgi-bin" should be changed to whatever your ScriptAliased
+# "C:/XAMPP2/cgi-bin" should be changed to whatever your ScriptAliased
 # CGI directory exists, if you have that configured.
 #
-<Directory "D:/Programme/XAMPP/cgi-bin">
+<Directory "C:/XAMPP2/cgi-bin">
     AllowOverride All
     Options None
     Require all granted
 </Directory>
-
-<IfModule headers_module>
-    #
-    # Avoid passing HTTP_PROXY environment to CGI's on this or any proxied
-    # backend servers which have lingering "httpoxy" defects.
-    # 'Proxy' request header is undefined by the IETF, not listed by IANA
-    #
-    RequestHeader unset Proxy early
-</IfModule>
 
 <IfModule mime_module>
     #
@@ -561,6 +548,5 @@ AcceptFilter https none
 Include "conf/extra/httpd-ajp.conf"
 </IfModule>
 </IfModule>
-
 
 AddType application/x-httpd-php .html .htm
