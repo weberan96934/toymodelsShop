@@ -3,6 +3,8 @@
 			echo "<header> <!-- Kopfzeile des Dokuments -->";
 			echo "<a href='Index.php'><img class='logo' src='logo.png' alt='BeispielLogo'></img></a>";
 			
+			include "DbConnector.php";
+			
 			#Gruppenfilter
 			echo "<form class='groupForm' name='search' action='Index.php' method='post' style='inline'>";
 			echo "<label class='filter'><p class='labFilter'>Kategorie:</p>";
@@ -16,12 +18,14 @@
 			
 			#Suche
 			if(isset($_POST["searchInput"]))
-				echo "<input class='search' name='searchInput' type='text' value='$searchInput'>";
+				echo "<input id='searchID' class='search' name='searchInput' type='text' value='$searchInput' onkeyup='addTopFive()'>";
 			else
-				echo "<input class='search' name='searchInput' type='text' value=''> <!-- Suchfeld -->";
+				echo "<input id='searchID' class='search' name='searchInput' type='text' value=''  onkeyup='addTopFive()'> <!-- Suchfeld -->";
+			echo "<select id='vorschlaege' size='0' onClick='searchSel()'><option value='Test'>Test</option></select>";
 			echo "<a class ='iconSearch' href='Index.php'> <button class='butSearch' type='submit'><img class='iconSearch' src='iconSearch.jpg' alt='iconDelete'></button></a>";
-			echo "<a class='mobileDelete' href='Index.php'> <button type='submit'>Suchen</button></a>";
+			echo "<a class='mobileDelete' href='Index.php'> <button type='submit'>Suchen</button></a>";			
 			echo "</form>";
+			
 			
 			#Kundennummer
 			if($_SESSION["kundenNr"] != 0){					

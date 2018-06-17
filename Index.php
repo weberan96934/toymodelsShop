@@ -7,11 +7,13 @@
 		<meta name="author" content="André Weber, Julia Wette, Eva Wittmann">
 		<title>Toy Models GmbH</title>
 		<link href="style.css" type="text/css" rel="stylesheet"/>
-		<link href="mobile.css" type="text/css" rel="stylesheet"
-		
-
+		<link href="mobile.css" type="text/css" rel="stylesheet">
+		<script src="../suchvorschlaege.js"></script> 
+		<script src="../sucheSelected.js"></script>
+		<script type="text/javascript" src="index.js"></script>
 	</head>
 	<body>
+	
 		<?php		
 			if(isset($_POST ["searchInput"]))
 				$searchInput = $_POST ["searchInput"];
@@ -85,10 +87,8 @@
 		</section>
 		
 		<footer><!-- weiterführende Links -->
-			<a class="impressum" href="Impressum.php"><p>Wir &uuml;ber uns & Impressum</p></a>
-			<p >test</p>		
+			<a class="impressum" href="Impressum.php"><p>Wir &uuml;ber uns & Impressum</p></a>	
 		</footer>
-		<script type="text/javascript" src="index.js"></script>
 		
 	</body>
 </html>
