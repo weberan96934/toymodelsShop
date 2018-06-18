@@ -18,7 +18,14 @@ function printCartView() {
 	alert("Ich bin versteckt!");
 }*/
 
-function myFunction() { 
-	var btn = document.createElement("Button");
-	document.body.appendChild(btn);
+function suchvorschlaege() { 
+	var x = document.getElementById("vorschlaege");
+	var option = document.createElement("option");
+	option.text = "Ananas";
+	x.add(option);
+	
+	var value = document.getElementById("searchID").value;
+	
+	var url = "//localhost/realtimeSearch.php?suchbegriff=" + value;
+	window.location = url;
 }

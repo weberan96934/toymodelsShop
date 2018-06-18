@@ -129,7 +129,11 @@ body{
 	footer a{
 		padding: 0.5vw;
 	}
-		
+	
+	#vorschlaege{
+		/*display: none;*/
+	}
+	
 	.impress {
 		color: white;
 		text-align: center;
