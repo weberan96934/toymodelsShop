@@ -1,3 +1,21 @@
+function addVorschlaege() {
+	alert("addvorschläge");
+	var topFive = document.getElementById["vorschlaege"];
+	var opt = document.createElement("option");
+	var myCookies = document.cookie;
+	alert(myCookies);
+	var cookieArr = myCookies.split("=");
+	var topFiveValueJson = cookieArr[cookieArr.length-1];
+	var topFiveValue = JSON.parse(topFiveValueJson);
+	alert (topFiveValue);
+	/*for (let i = 0; i < 5; i++) {
+		var newOptionValue = arr[i];
+		alert(newOption);
+		topFive[i] = new option(newOptionValue);
+		alert("FINISH");
+	}*/
+			}
+
 function printCartView() { 
 	var myArr = ["Audi", "BMW", "Ford", "Honda", "Jaguar", "Nissan"];
 	
@@ -14,18 +32,22 @@ function printCartView() {
 		document.body.appendChild(a);
 	}
 }
-/*function hideCartView() { 
+
+function hideCartView() { 
 	alert("Ich bin versteckt!");
-}*/
+}
 
 function suchvorschlaege() { 
-	var x = document.getElementById("vorschlaege");
-	var option = document.createElement("option");
-	option.text = "Ananas";
-	x.add(option);
-	
-	var value = document.getElementById("searchID").value;
-	
-	var url = "//localhost/realtimeSearch.php?suchbegriff=" + value;
-	window.location = url;
+				var value = document.getElementById("searchID").value;
+				var topFive = document.getElementById("vorschlaege");
+				
+				if(value == ""){
+					topFive.style.display = "none";
+				}				
+				else{
+					topFive.style.display = "block";	
+					
+					var url = "//localhost/realtimeSearch.php?suchbegriff=" + value;
+					window.location = url;
+				}
 }

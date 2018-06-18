@@ -7,26 +7,23 @@
 			
 			#Gruppenfilter
 			echo "<form class='groupForm' name='search' action='Index.php' method='post' style='inline'>";
-			echo "<label class='filter'><p class='labFilter'>Kategorie:</p>";
-			echo "<select name='filterOption' class='filter'>";
-			include "groupSelection.php";
-			$selected = $_POST["filterOption"];
-				if(isset($_POST["filterOption"])){
-					echo "<option name='$selected' value='$selected' selected>" . $selected . "</option>";
-				}
-			echo "</select></label>";
-			
-			#Suche
-			if(isset($_POST["searchInput"]))
-				echo "<input id='searchID' class='search' name='searchInput' type='text' value='$searchInput' onkeyup='suchvorschlaege()'>";
-			else
-				echo "<input id='searchID' class='search' name='searchInput' type='text' value=''  onkeyup='suchvorschlaege()' <!-- Suchfeld -->";
-			echo "<select id='vorschlaege' size='0' onClick='searchSel()'><option>Kiwi</option></select>";
-			echo "<a class ='iconSearch' href='Index.php'> <button class='butSearch' type='submit'><img class='iconSearch' src='iconSearch.jpg' alt='iconDelete'></button></a>";
-			echo "<a class='mobileDelete' href='Index.php'> <button type='submit'>Suchen</button></a>";			
-			
-			
-			
+				echo "<label class='filter'><p class='labFilter'>Kategorie:</p>";
+				echo "<select name='filterOption' class='filter'>";
+				include "groupSelection.php";
+				$selected = $_POST["filterOption"];
+					if(isset($_POST["filterOption"])){
+						echo "<option name='$selected' value='$selected' selected>" . $selected . "</option>";
+					}
+				echo "</select></label>";
+				
+				#Suche
+				if(isset($_POST["searchInput"]))
+					echo "<input id='searchID' class='search' name='searchInput' type='text' value='$searchInput' onkeyup='suchvorschlaege()'>";
+				else
+					echo "<input id='searchID' class='search' name='searchInput' type='text' value=''  onkeyup='suchvorschlaege()'>";
+				echo "<select id='vorschlaege' size='1' onClick='searchSel()'><option>Kiwi</option></select>";
+				echo "<a class ='iconSearch' href='Index.php'> <button class='butSearch' type='submit'><img class='iconSearch' src='iconSearch.jpg' alt='iconDelete'></button></a>";
+				echo "<a class='mobileDelete' href='Index.php'> <button type='submit'>Suchen</button></a>";			
 			echo "</form>";
 			
 			

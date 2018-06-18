@@ -8,17 +8,24 @@
 		<title>Toy Models GmbH</title>
 		<link href="style.css" type="text/css" rel="stylesheet"/>
 		<link href="mobile.css" type="text/css" rel="stylesheet">
-		<script type="text/javascript" src="suchvorschlaege.js"></script> 
-		<script type="text/javascript" src="sucheSelected.js"></script>
 		<script type="text/javascript" src="index.js"></script>
 	</head>
 	<body>
 	
-		<?php		
+	
+	
+		<?php	
 			if(isset($_POST ["searchInput"]))
 				$searchInput = $_POST ["searchInput"];
 			
 			session_start();
+			if(isset($_COOKIE["topFiveCookie"]) AND isset($_SESSION["teilSuche"])){
+				echo "<script>addVorschlaege();</script>";
+				//setcookie("topFiveCookie", "", -100);
+				unset($_SESSION["teilSuche"]);
+			}
+				
+			
 			//Cookie für cart
 			if(!isset($_SESSION["kundenNr"])){
 				for($i = 0; $i >= 0; $i++){
