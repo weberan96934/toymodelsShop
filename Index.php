@@ -8,8 +8,8 @@
 		<title>Toy Models GmbH</title>
 		<link href="style.css" type="text/css" rel="stylesheet"/>
 		<link href="mobile.css" type="text/css" rel="stylesheet">
-		<script src="../suchvorschlaege.js"></script> 
-		<script src="../sucheSelected.js"></script>
+		<script type="text/javascript" src="suchvorschlaege.js"></script> 
+		<script type="text/javascript" src="sucheSelected.js"></script>
 		<script type="text/javascript" src="index.js"></script>
 	</head>
 	<body>

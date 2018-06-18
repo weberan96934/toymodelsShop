@@ -17,3 +17,8 @@ function printCartView() {
 /*function hideCartView() { 
 	alert("Ich bin versteckt!");
 }*/
+
+function myFunction() { 
+	var btn = document.createElement("Button");
+	document.body.appendChild(btn);
+}

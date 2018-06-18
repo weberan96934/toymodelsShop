@@ -20,7 +20,7 @@
 			if(isset($_POST["searchInput"]))
 				echo "<input id='searchID' class='search' name='searchInput' type='text' value='$searchInput' onkeyup='addTopFive()'>";
 			else
-				echo "<input id='searchID' class='search' name='searchInput' type='text' value=''  onkeyup='addTopFive()'> <!-- Suchfeld -->";
+				echo "<input id='searchID' class='search' name='searchInput' type='text' value=''  onkeyup='myFunction()' <!-- Suchfeld -->";
 			echo "<select id='vorschlaege' size='0' onClick='searchSel()'><option value='Test'>Test</option></select>";
 			echo "<a class ='iconSearch' href='Index.php'> <button class='butSearch' type='submit'><img class='iconSearch' src='iconSearch.jpg' alt='iconDelete'></button></a>";
 			echo "<a class='mobileDelete' href='Index.php'> <button type='submit'>Suchen</button></a>";			
