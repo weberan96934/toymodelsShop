@@ -52,15 +52,17 @@ function suchvorschlaege() {
 					var xhttp = new XMLHttpRequest();
 					xhttp.onreadystatechange = function() {
 						if (this.readyState == 4 && this.status == 200) {
-							var topFiveJson = this.responeText;
+							var topFiveJson = this.responseText;
+							alert(topFiveJson);
+							var topFiveValue = JSON.parse(topFiveJson);
+							alert(topFiveValue[0]);
 						}
 					};
-					xhttp.open("GET", "realtimeSearch.php", true)
+					xhttp.open("GET", "realtimeSearch.php?suchbegriff=" + value, true)
 					xhttp.send();
-					alert("test");
-					var topFiveValue = JSON.parse(topFiveJson);
+					
+					
 					
 					//var url = "//localhost/realtimeSearch.php?suchbegriff=" + value;
-					//window.location = url;
 				}
 }
