@@ -8,14 +8,14 @@
 								WHERE ArtikelName LIKE '%$searchInput%'
 								LIMIT 5");
 	$searchdb->execute();
-	$arr = $searchdb->fetchAll(PDO::FETCH_BOTH);
+	$arr = $searchdb->fetchAll(PDO::FETCH_COLUMN);
 	$_SESSION["teilSuche"] = $searchInput;
-	$arrJson = json_encode($arr);
-	echo $arrJson;
-	setcookie ("topFiveCookie", $arrJson, time() + 60 * 60 * 24 * 365);
+	print_r ($arr);
+	echo "<br>";
+	echo json_encode($arr);
 ?>
 <script>
-	alert("halt");
+	alert("stop");
 	var url = "//localhost/Index.php";
 	window.location = url;
 </script>

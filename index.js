@@ -38,6 +38,8 @@ function hideCartView() {
 }
 
 function suchvorschlaege() { 
+				alert("test");
+				
 				var value = document.getElementById("searchID").value;
 				var topFive = document.getElementById("vorschlaege");
 				
@@ -47,7 +49,18 @@ function suchvorschlaege() {
 				else{
 					topFive.style.display = "block";	
 					
-					var url = "//localhost/realtimeSearch.php?suchbegriff=" + value;
-					window.location = url;
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							var topFiveJson = this.responeText;
+						}
+					};
+					xhttp.open("GET", "realtimeSearch.php", true)
+					xhttp.send();
+					alert("test");
+					var topFiveValue = JSON.parse(topFiveJson);
+					
+					//var url = "//localhost/realtimeSearch.php?suchbegriff=" + value;
+					//window.location = url;
 				}
 }
