@@ -21,7 +21,7 @@
 					echo "<input id='searchID' class='search' name='searchInput' type='text' value='$searchInput' onkeyup='suchvorschlaege()'>";
 				else
 					echo "<input id='searchID' class='search' name='searchInput' type='text' value=''  onkeyup='suchvorschlaege()'>";
-				echo "<select id='vorschlaege' size='1' onClick='searchSel()'><option>Kiwi</option></select>";
+				echo "<select id='vorschlaege' size='1' onClick='searchSel()'></select>";
 				echo "<a class ='iconSearch' href='Index.php'> <button class='butSearch' type='submit'><img class='iconSearch' src='iconSearch.jpg' alt='iconDelete'></button></a>";
 				echo "<a class='mobileDelete' href='Index.php'> <button type='submit'>Suchen</button></a>";			
 			echo "</form>";

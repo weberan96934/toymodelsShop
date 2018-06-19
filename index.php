@@ -19,12 +19,6 @@
 				$searchInput = $_POST ["searchInput"];
 			
 			session_start();
-			if(isset($_COOKIE["topFiveCookie"]) AND isset($_SESSION["teilSuche"])){
-				echo "<script>addVorschlaege();</script>";
-				//setcookie("topFiveCookie", "", -100);
-				unset($_SESSION["teilSuche"]);
-			}
-				
 			
 			//Cookie für cart
 			if(!isset($_SESSION["kundenNr"])){

@@ -1,20 +1,14 @@
-function addVorschlaege() {
-	alert("addvorschläge");
-	var topFive = document.getElementById["vorschlaege"];
-	var opt = document.createElement("option");
-	var myCookies = document.cookie;
-	alert(myCookies);
-	var cookieArr = myCookies.split("=");
-	var topFiveValueJson = cookieArr[cookieArr.length-1];
-	var topFiveValue = JSON.parse(topFiveValueJson);
-	alert (topFiveValue);
-	/*for (let i = 0; i < 5; i++) {
-		var newOptionValue = arr[i];
-		alert(newOption);
-		topFive[i] = new option(newOptionValue);
-		alert("FINISH");
-	}*/
-			}
+function addVorschlaege(topFiveValue) {
+	
+	var topFive = document.getElementById("vorschlaege");
+	for (let i = 0; i < 5; i++) {
+		if(topFiveValue[i] == undefined)
+			break;
+		var option = document.createElement("option");
+		option.text = topFiveValue[i];
+		topFive.options[i]= option;
+	}
+}
 
 function printCartView() { 
 	var myArr = ["Audi", "BMW", "Ford", "Honda", "Jaguar", "Nissan"];
@@ -38,8 +32,6 @@ function hideCartView() {
 }
 
 function suchvorschlaege() { 
-				alert("test");
-				
 				var value = document.getElementById("searchID").value;
 				var topFive = document.getElementById("vorschlaege");
 				
@@ -53,16 +45,11 @@ function suchvorschlaege() {
 					xhttp.onreadystatechange = function() {
 						if (this.readyState == 4 && this.status == 200) {
 							var topFiveJson = this.responseText;
-							alert(topFiveJson);
 							var topFiveValue = JSON.parse(topFiveJson);
-							alert(topFiveValue[0]);
+							addVorschlaege(topFiveValue);
 						}
 					};
 					xhttp.open("GET", "realtimeSearch.php?suchbegriff=" + value, true)
 					xhttp.send();
-					
-					
-					
-					//var url = "//localhost/realtimeSearch.php?suchbegriff=" + value;
 				}
 }
