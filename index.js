@@ -48,8 +48,8 @@ function suchvorschlaege() {
 							var topFiveValue = JSON.parse(topFiveJson);
 							addVorschlaege(topFiveValue);
 						}
-					};
-					xhttp.open("GET", "realtimeSearch.php?suchbegriff=" + value, true)
+					}
+					xhttp.open("GET", "realtimeSearch.php?suchbegriff=" + value, true);
 					xhttp.send();
 				}
 }
