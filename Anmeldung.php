@@ -24,7 +24,7 @@
 			<h1>Anmeldung</h1> 
 		</header>
 		<section class="tabSignIn"> <!-- Anmeldung des Benutzers -->	
-			<form name="login" action="index.php" method="post">
+			<form name="login" action="Index.php" method="post">
 				<label class='cusNr'>Kundennummer:<input name="kundenNr" class="tabSignInInput" type="text" name="kundenNr" value=""></label>
 				<a href="login.php"> <button class="tabSignInInput ghost-button-full-color" type="submit">Anmelden</button><br><br> </a>
 			</form>

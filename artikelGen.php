@@ -59,12 +59,12 @@
 				echo "<p class='tabRowType2'>".$artikel[$i][1]."</p><p class='tabRowType2 hideMobile'>".$artikel[$i][0]."</p><p class='tabRowType2 mobileDelete'>".$artikel[$i][9]."</p><p class='tabRowType2 description'>".$artikel[$i][5]."</p><p class='tabRowType2 price'>".$artikel[$i][8]." €</p>";
 			}
 			//Produktmenge Eingabe
-			echo "<form name='addItem' action='index.php' method='post' style='inline'>";
+			echo "<form name='addItem' action='Index.php' method='post' style='inline'>";
 				echo "<label class='whiteFont centerMobile'>Menge:</label>";
 				echo "<input class='count' name='menge' type='number' value='1' max='999' min='1'>";
 				
 				//Kaufen Button
-				echo "<p><a href='index.php'> <button class='butBuy ghost-button-full-color' type='submit'><p>Kaufen</p></button> </a></p>";
+				echo "<p><a href='Index.php'> <button class='butBuy ghost-button-full-color' type='submit'><p>Kaufen</p></button> </a></p>";
 				echo "<input class='hide' name='item' type='text' value='".$artikel[$i][0]."'>";
 			echo "</form>";
 		}
