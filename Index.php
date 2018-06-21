@@ -7,7 +7,10 @@
 		<meta name="author" content="André Weber, Julia Wette, Eva Wittmann">
 		<title>Toy Models GmbH</title>
 		<link href="style.css" type="text/css" rel="stylesheet"/>
-		<link href="mobile.css" type="text/css" rel="stylesheet">
+		<link href="mobile.css" type="text/css" rel="stylesheet"/>
+		
+		<link rel="import" href="testDom.html"/>
+		
 		<script type="text/javascript" src="index.js"></script>
 	</head>
 	<body>
@@ -19,12 +22,6 @@
 				$searchInput = $_POST ["searchInput"];
 			
 			session_start();
-			if(isset($_COOKIE["topFiveCookie"]) AND isset($_SESSION["teilSuche"])){
-				echo "<script>addVorschlaege();</script>";
-				//setcookie("topFiveCookie", "", -100);
-				unset($_SESSION["teilSuche"]);
-			}
-				
 			
 			//Cookie für cart
 			if(!isset($_SESSION["kundenNr"])){
